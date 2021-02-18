@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rocktech.boarddriver"
+    android:sharedUserId="android.uid.system">
+
+    <application
+        android:name=".BoardDriverApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activity.AssetCodeActivity" />
+
+        <receiver
+            android:name=".mainserver.MyBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <!-- 扫码枪 -->
+                <action android:name="android.intent.action.hal.barcodescanner.onoff" />
+                <action android:name="android.intent.action.hal.barcodescanner.scan" />
+                <action android:name="android.intent.action.hal.barcodescanner.cancel" />
+                <!-- 打印机 -->
+                <action android:name="android.intent.action.hal.printer.onoff" />
+                <action android:name="android.intent.action.hal.printer.haspaper" />
+                <action android:name="android.intent.action.hal.printer.needmore" />
+                <action android:name="android.intent.action.hal.printer.print" />
+                <action android:name="android.intent.action.hal.printer.supportsize" />
+                <!-- 锁控版 -->
+                <action android:name="android.intent.action.hal.iocontroller.open" />
+                <action android:name="android.intent.action.hal.iocontroller.query" />
+                <action android:name="android.intent.action.hal.iocontroller.batchopen" />
+                <action android:name="android.intent.action.hal.iocontroller.simplebatchquery" />
+                <action android:name="android.intent.action.hal.iocontroller.queryAll" />
+                <action android:name="android.intent.action.hal.iocontroller.querySingleCabinet" />
+                <!-- 灯 -->
+                <action android:name="android.intent.action.hal.lamp.onoff" />
+                <action android:name="android.intent.action.hal.lamp.main.onoff" />
+                <!-- 重启 -->
+                <action android:name="android.intent.action.hal.app.reboot" />
+                <!-- 资产编码 -->
+                <action android:name="android.intent.action.hal.boxinfo.write" />
+                <action android:name="android.intent.action.hal.boxinfo.query" />
+                <!-- 中间层程序配置属性表 -->
+                <action android:name="android.intent.action.hal.cfgtable.query" />
+                <!-- 初始化或销毁监听柜体模块 -->
+                <action android:name="android.intent.action.hal.guard.onoff" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!-- 获取温度 -->
+                <action android:name="android.intent.action.hal.sys.query" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".mainserver.MainServer"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".mainserver.IRemoteService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.fcbox.locker.action.DRIVER_SERVICE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/device_filter" />
+        </service>
+        <service
+            android:name=".mainserver.FBoxRemoteService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.remote.aidl.IRemoteService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".mainserver.AIDLService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.hal.AIDLService" />
+            </intent-filter>
+        </service>
+    </application>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.usb.host" />
+
+</manifest>

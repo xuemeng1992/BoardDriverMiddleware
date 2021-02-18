@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_rocktech_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_blower_heater"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_module_blower_heater" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/gray_white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_blower_heater"
+        android:orientation="vertical">
+
+
+        <include layout="@layout/layout_module_control" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_board_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_control"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_module_board_id" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_watthour_meter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_board_id"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_module_watthour_meter" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_manual_control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_watthour_meter"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_module_manual_control" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_white" />
+    </LinearLayout>
+</RelativeLayout>

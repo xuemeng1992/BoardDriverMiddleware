@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">瑞迅通用锁控板中间层</string>
+    <string name="progress_dialog">提示</string>
+    <string name="please_wait">正在加载....</string>
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <!--主/副柜-->
+    <com.rocktech.boarddriver.ui.view.MySpinner
+        android:id="@+id/sp_cupboard_type"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="1" />
+    <!--室内/外-->
+    <com.rocktech.boarddriver.ui.view.MySpinner
+        android:id="@+id/sp_cupboard_position"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="1" />
+    <!--功能-->
+    <com.rocktech.boarddriver.ui.view.MySpinner
+        android:id="@+id/sp_cupboard_function"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="1" />
+    <!--产品种类-->
+    <com.rocktech.boarddriver.ui.view.MySpinner
+        android:id="@+id/sp_cupboard_product_type"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="1" />
+    <!--摆放位置-->
+    <Spinner
+        android:id="@+id/sp_cupboard_placement"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="1" />
+    <!--流水号-->
+    <EditText
+        android:id="@+id/et_cupboard_serial_number"
+        android:layout_width="15dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@null"
+        android:enabled="false"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="7"
+        android:textColor="@color/gray_white"
+        android:textSize="20sp" />
+</LinearLayout>

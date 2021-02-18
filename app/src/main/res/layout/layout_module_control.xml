@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <Switch
+        android:id="@+id/sw_alert_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="柜体警报    "
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:textSize="20sp" />
+
+    <Switch
+        android:id="@+id/sw_lock_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="开锁状态    "
+        android:textOff=" 0 "
+        android:textOn=" 1 "
+        android:textSize="20sp" />
+
+    <Switch
+        android:id="@+id/sw_doorlock_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="门磁状态    "
+        android:textOff="常闭"
+        android:textOn="常开"
+        android:textSize="20sp" />
+</LinearLayout>
