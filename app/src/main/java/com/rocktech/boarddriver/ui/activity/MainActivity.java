@@ -301,6 +301,13 @@ public class MainActivity extends BaseActivity implements RockInterface {
 
     @Override
     protected void addListener() {
+        tvTitle.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startActivity(SelectComActivity.class);
+                return false;
+            }
+        });
         spinnerQrCode.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

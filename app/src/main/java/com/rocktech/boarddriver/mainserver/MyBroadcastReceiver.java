@@ -151,10 +151,10 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
         // 中间层程序配置属性表
         if (Action.CFGTABLE_QUERY.equals(action)) {
             Intent intent2 = new Intent("android.intent.action.hal.cfgtable.result");
-            intent2.putExtra("halVersion", "V2.7.5");
+            intent2.putExtra("halVersion", "V2.7.6");
             intent2.putExtra("vendorName", "陕西瑞迅电子信息技术有限公司");
-            intent2.putExtra("vendorAppVersion", "20200619");
-            intent2.putExtra("vendorAppName", "通用中间层软件");
+            intent2.putExtra("vendorAppVersion", "20210414");
+            intent2.putExtra("vendorAppName", "通用中间层系统");
             context.sendBroadcast(intent2);
         }
         // 柜体事件监控

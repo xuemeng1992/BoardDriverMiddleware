@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.AssetCodeActivity" />
-
+        <activity android:name=".ui.activity.SelectComActivity"/>
         <receiver
             android:name=".mainserver.MyBroadcastReceiver"
             android:exported="true">

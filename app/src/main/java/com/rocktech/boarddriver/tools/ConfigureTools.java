@@ -71,6 +71,14 @@ public class ConfigureTools {
         return SPHelper.getInstance(context).getString(Constant.SPKEY.PRINTER, "");
     }
 
+    public static void setLockCOM(Context context, String lockCom) {
+        SPHelper.getInstance(context).putString(Constant.SPKEY.LOCK_COM, lockCom);
+    }
+
+    public static String getLockCOM(Context context) {
+        return SPHelper.getInstance(context).getString(Constant.SPKEY.LOCK_COM, "");
+    }
+
     public static void setPrinterTty(Context context, String printerTty) {
         SPHelper.getInstance(context).putString(Constant.SPKEY.PRINTER_COM, printerTty);
     }
@@ -177,7 +185,7 @@ public class ConfigureTools {
     }
 
     public static CustomerConfigBean getCustomerConfigBean(Context context, String customer_type) {
-        if (!TextUtils.isEmpty(getConfigInfo(context, "customer.config"))) {
+        if (TextUtils.isEmpty(getLockCOM(context))) {
             Gson gson = new Gson();
             Type t = new TypeToken<List<CustomerConfigBean>>() {
             }.getType();
@@ -187,6 +195,12 @@ public class ConfigureTools {
                     return list.get(i);
                 }
             }
+        } else {
+            CustomerConfigBean configBean = new CustomerConfigBean();
+            configBean.setCom(getLockCOM(context));
+            configBean.setId("999");
+            configBean.setName("自定义串口");
+            return configBean;
         }
         return null;
     }

@@ -155,7 +155,7 @@ public class CommonLocker implements ILocker, OnDataReceiverListener {
                 break;
             case Constant.STATE_OPEN_SINGLE_LOCK:
                 if (checkResultTYPE == Constant.CheckResultTYPE.RESULT_OK) {
-                    commonDataObservable.setData(new CommonDataBean(HandleFactory.produceHandle(type).stateOpenSingleLock(data, ThreeColumns.getRealBoxName(HandleFactory.getCurrentBoxId()), context)));
+                    commonDataObservable.setData(new CommonDataBean(HandleFactory.produceHandle(type).stateOpenSingleLock(data, HandleFactory.getCurrentBoxId(), context)));
                 } else if (checkResultTYPE == Constant.CheckResultTYPE.OVERTIME) {
                     commonDataObservable.setData(new CommonDataBean(null));
                 }
@@ -480,7 +480,7 @@ public class CommonLocker implements ILocker, OnDataReceiverListener {
     public synchronized boolean openLock(String str) {
         final CountDownLatch countDownLatch = new CountDownLatch(1);
         HandleFactory.setCurrentBoxId(str);
-        lockerControl.addData(CMDFactory.produceCMD(type).openLock(ThreeColumns.getRealBoxName(str)), false, Constant.STATE_OPEN_SINGLE_LOCK);
+        lockerControl.addData(CMDFactory.produceCMD(type).openLock(str), false, Constant.STATE_OPEN_SINGLE_LOCK);
         DataObserver dataObserver = new DataObserver();
         dataObserver.setiCommonDataObservable(new DataObserver.ICommonDataObservable() {
             @Override

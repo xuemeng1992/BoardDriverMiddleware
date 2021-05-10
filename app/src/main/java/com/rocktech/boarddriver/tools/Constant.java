@@ -55,7 +55,7 @@ public class Constant {
     public static final String DB_NAME = "boarddriver.db";
 
     public static final String[] m1 = {"请选择", "honeywell N5680SR", "honeywell 3310G", "德沃 XN-201", "新大陆 FM5050-20",
-            "擎亚 4102s", "斯普瑞-4308"};
+            "擎亚 4102s", "斯普瑞-4108"};
     public static final String[] m2 = {"请选择", "思普瑞特 3寸  SP-EU801SU", "启锐 4寸  QR-588Q ", "新北洋BK-T6112"};
 
     public static final String[] m3 = {"请选择校验模式", "PARITY_NONE", "PARITY_ODD", "PARITY_EVEN", "PARITY_ALWAYS_ONE",
@@ -72,6 +72,19 @@ public class Constant {
     public final static String[] st_cupboard_court_mainboard_type = {"带读卡器", "不带读卡器"};
     public final static String[] st_cupboard_court_board_type = {"32格口", "16格口"};
     public final static String[] str_cupboard_position = {"室内", "户外"};
+
+    public final static String[] COM_LIST = new String[]{
+            "默认串口",
+            "/dev/ttymxc0",
+            "/dev/ttymxc1", "/dev/ttymxc2", "/dev/ttymxc3",
+            "/dev/ttymxc4", "/dev/ttymxc5", "/dev/ttymxc6",
+            "/dev/ttyS0",
+            "/dev/ttyS1", "/dev/ttyS2", "/dev/ttyS3",
+            "/dev/ttyS4", "/dev/ttyS5", "/dev/ttyS6",
+            "/dev/ttyUSB0", "/dev/ttyUSB1", "/dev/ttyUSB2",
+            "/dev/ttyUSB3", "/dev/ttyUSB4", "/dev/ttyUSB5",
+            "/dev/ttyUSB6"
+    };
 
     public static class CheckResultTYPE {
         public static final int OVERTIME = 1;
@@ -93,6 +106,7 @@ public class Constant {
         public static final String BAUDRATE = "BAUDRATE";
         public static final String BUZZER = "BUZZER";
         public static final String CONNECTBOXSIZE = "CONNECTBOXSIZE";
+        public static final String LOCK_COM = "LOCK_COM";
     }
 
 

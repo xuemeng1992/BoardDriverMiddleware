@@ -8,7 +8,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 275
-        versionName "瑞迅通用锁控板中间层V2.7.5"
+        versionName "瑞迅通用锁控板中间层V2.7.6"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
